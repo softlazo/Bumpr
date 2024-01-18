@@ -2,11 +2,15 @@ from discum.utils.slash import SlashCommander
 import discum
 import time
 import random
+import os
 
-ownerID = "" #OWNER ID
-reminder_botID = "" #REMINDER BOT ID
-selfbot_ID = "" #SELFBOT ID
-TOKEN = "" #TOKEN
+from keep_alive import keep_alive
+keep_alive()
+
+ownerID = os.environ.get('ownerID') #OWNER ID
+reminder_botID = os.environ.get('reminder_botID') #REMINDER BOT ID
+selfbot_ID = os.environ.get('selfbot_ID') #SELFBOT ID
+TOKEN = os.environ.get('TOKEN') #TOKEN
 
 
 bot = discum.Client(token=TOKEN,log=False)
